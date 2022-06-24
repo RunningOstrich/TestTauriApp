@@ -1,16 +1,26 @@
-import React from 'react';
+import * as React from "react";
+import { FunctionComponent, useEffect, useState } from "react";
+import { invoke } from '@tauri-apps/api';
+
 import './App.css';
 
-function App() {
+const App : FunctionComponent<{}> = () => {
+
+  const [greeting, setGreeting] = useState<string>();
+
+  useEffect(() => { 
+    invoke<string>("greet", { name: "world" }).then(setGreeting);
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          TODO!
+          { greeting }
         </p>
       </header>
     </div>
   );
 }
 
-export default App;
+export { App };
