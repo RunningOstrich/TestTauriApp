@@ -1,10 +1,10 @@
 {
-  "$schema": "./frontend/node_modules/@tauri-apps/cli/schema.json",
+  "$schema": "../frontend/node_modules/@tauri-apps/cli/schema.json",
   "build": {
     "beforeBuildCommand": "yarn --cwd ./frontend/ build",
     "beforeDevCommand": "yarn --cwd ./frontend/ start",
     "devPath": "http://localhost:3000",
-    "distDir": "./frontend/dist"
+    "distDir": "../frontend/dist"
   },
   "package": {
     "productName": "test-app",
